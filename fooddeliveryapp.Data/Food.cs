@@ -11,6 +11,7 @@ namespace fooddeliveryapp.Data
     {
         [Key]
         public int FoodId { get; set; }
+        public Guid OwnerId { get; set; }
         [Required]
         [Display(Name = "Food Name")]
         public string FoodName { get; set; }

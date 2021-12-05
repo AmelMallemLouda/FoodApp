@@ -9,7 +9,7 @@ namespace fooddeliveryapp.Models
 {
    public class FoodListItem
     {
-
+        public int FoodId { get; set; }
         [Display(Name = "Food Name")]
         public string FoodName { get; set; }
         [Required]

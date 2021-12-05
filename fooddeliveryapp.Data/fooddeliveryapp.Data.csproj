@@ -56,11 +56,28 @@
   <ItemGroup>
     <Compile Include="Food.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202112050045551_InitialCreate.cs" />
+    <Compile Include="Migrations\202112050045551_InitialCreate.Designer.cs">
+      <DependentUpon>202112050045551_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112050249211_AddMigration.cs" />
+    <Compile Include="Migrations\202112050249211_AddMigration.Designer.cs">
+      <DependentUpon>202112050249211_AddMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202112050045551_InitialCreate.resx">
+      <DependentUpon>202112050045551_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112050249211_AddMigration.resx">
+      <DependentUpon>202112050249211_AddMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
