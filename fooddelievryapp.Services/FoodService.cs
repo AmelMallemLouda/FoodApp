@@ -61,5 +61,57 @@ namespace fooddelievryapp.Services
             }
 
         }
+
+        public FoodDetails GetFoodById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                            .Foods
+                            .Single(e => e.FoodId == id && e.OwnerId == _userId);
+                return new FoodDetails
+                {
+                    FoodId = entity.FoodId,
+                    FoodName = entity.FoodName,
+                    FoodPrice = entity.FoodPrice,
+                    FoodIngridients = entity.FoodIngridients,
+                };
+            }
+        }
+
+        public bool UpdateFood(FoodEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                          .Foods
+                          .Single(e => e.FoodId == model.FoodId && e.OwnerId == _userId);
+
+                entity.FoodName = model.FoodName;
+                entity.FoodPrice = model.FoodPrice;
+                entity.FoodIngridients = model.FoodIngridients;
+
+                return ctx.SaveChanges() == 1;
+
+            }
+
+
+
+        }
+       
+        public bool DeleteFood(int FoodId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Foods
+                        .Single(e => e.FoodId == FoodId && e.OwnerId == _userId);
+
+                ctx.Foods.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

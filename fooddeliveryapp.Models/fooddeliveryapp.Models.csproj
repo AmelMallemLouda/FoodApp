@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FoodCreate.cs" />
+    <Compile Include="FoodDetails.cs" />
+    <Compile Include="FoodEdit.cs" />
     <Compile Include="FoodListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.FoodIngridients)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FoodName }) |
-            @Html.ActionLink("Details", "Details", new { id = item.FoodPrice}) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.FoodIngridients})
+            @Html.ActionLink("Edit", "Edit", new { id=item.FoodId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.FoodId}) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.FoodId})
         </td>
     </tr>
 }
